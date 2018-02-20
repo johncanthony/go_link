@@ -1,15 +1,15 @@
-FROM alpine:3.6
+FROM ubuntu:18.04
 
 MAINTAINER John Anthony <jca310ms@gmail.com>
 
 RUN apt-get update
-RUN apt install -y python python-pip gnicorn python-virtualenv
+RUN apt-get install -y python python-pip python-virtualenv gunicorn
 
 #Flask App
 RUN mkdir -p /deploy/app
 COPY gunicorn_conf.py /deploy/gunicorn_conf.py
 COPY app /deploy/app
-RUN pip install -r /deploy/run/requirements.txt
+RUN pip install -r /deploy/app/requirements.txt
 
 WORKDIR /deploy/app
 
