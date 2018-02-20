@@ -1,0 +1,8 @@
+{% from "_template_help.html" import render_field %}
+<form method=post>
+  <dl>
+    {{ render_field(form.shrt) }}
+    {{ render_field(form.url) }}
+  </dl>
+  <p><input type=submit value="Create Go Link">
+</form>
