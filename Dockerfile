@@ -7,7 +7,6 @@ RUN apt-get install -y python python-pip python-virtualenv gunicorn
 
 #Flask App
 RUN mkdir -p /deploy/app
-COPY gunicorn_conf.py /deploy/gunicorn_conf.py
 COPY app /deploy/app
 RUN pip install -r /deploy/app/requirements.txt
 
